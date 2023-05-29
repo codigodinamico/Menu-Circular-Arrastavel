@@ -1,0 +1,105 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: #f4f4fb;
+    overflow: hidden;
+}
+.nav{
+    position: absolute;
+    display: flex;
+    top: 20px;
+    right: 20px;
+    height: 300px;
+    background-color: #f4f4fb;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+}
+.nav-container{
+    position: relative;
+}
+.toggle-btn, .nav-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafaff;
+    border-radius: 50%;
+}
+.toggle-btn{
+    position: relative;
+    display: flex;
+    width: 70px;
+    height: 70px;
+    font-size: 35px;
+    color: #4957d4;
+    box-shadow: -6px -6px 24px #f7f8fc, 6px 6px 24px #d2d5ef, inset 6px 6px 24px #f7f8fc, inset -6px -6px 24px #d2d5ef;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s;
+    cursor: pointer;
+    z-index: 10;
+}
+.toggle-btn i{
+    transition: transform 0.8s ease-in-out;
+}
+.toggle-btn:hover{
+    box-shadow: 6px 6px 24px #f7f8fc, -6px -6px 24px #d2d5ef, inset -6px -6px 24px #f7f8fc, inset 6px 6px 24px #d2d5ef;
+    transform: scale(0.95);
+}
+.nav-icon, .nav-link{
+    width: 40px;
+    height: 40px;
+}
+.nav-icon{
+    font-size: 16px;
+    color: #363745;
+    box-shadow: -4px -4px 16px #f7f8fc, 4px 4px 16px #d9dcf2, inset 4px 4px 16px #f7f8fc, inset -4px -4px 16px #d9dcf2;
+    transition: box-shadow 0.3s ease-in-out;
+}
+.nav-icon:hover{
+    box-shadow: 4px 4px 16px #f7f8fc, -4px -4px 16px #d9dcf2, inset -4px -4px 16px #f7f8fc, inset 4px 4px 16px #d9dcf2;
+}
+.nav-link{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    opacity: 0;
+    transition: transform 0.8s ease-in-out, opacity 0.5s;
+    z-index: 1;
+}
+.nav-link:nth-child(1){
+    transition-delay: 0.2s;
+}
+.nav-link:nth-child(2){
+    transition-delay: 0.2s;
+}
+.nav-link:nth-child(3){
+    transition-delay: 0.3s;
+}  
+.nav-link:nth-child(4){
+    transition-delay: 0.3s;
+}  
+/* Girar toggle */
+.active.toggle-btn i{
+    transform: rotate(135deg);
+}
+/* Mover ícones */
+.active ~ ul .nav-link{
+    opacity: 1;
+}
+.active ~ ul .nav-link:nth-child(1){
+    transform: translate(-72px, 32px);
+}
+.active ~ ul .nav-link:nth-child(2){
+    transform: translate(-72px, -32px);
+}
+.active ~ ul .nav-link:nth-child(3){
+    transform: translate(-8px, -72px);
+}
+.active ~ ul .nav-link:nth-child(4){
+    transform: translate(-8px, 72px);
+}
